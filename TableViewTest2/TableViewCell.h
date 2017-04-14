@@ -11,5 +11,7 @@
 @interface TableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *raceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageLocation;
+@property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 
 @end

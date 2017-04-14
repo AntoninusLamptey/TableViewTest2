@@ -16,8 +16,10 @@
     dispatch_queue_t myQueue;
     NSDictionary *mydict1;
     NSDictionary *mydict2;
+    NSDictionary *mydict3;
     NSData *myData1;
     NSData *myData2;
+    NSData *myData3;
     //NSData *myData;
     //NSURL *myUrl;
 }
@@ -45,7 +47,7 @@
     
 }
 
-- (void) getcoordinatesJSON:(void (^)(NSArray *)) callback{
+- (void) getCoordinatesJSON:(void (^)(NSArray *)) callback{
     
     coordinatesJSON = [[NSMutableArray alloc] init];
     myQueue = dispatch_queue_create("myQueue2", NULL);
@@ -67,6 +69,34 @@
         callback(coordinatesJSON);
         
     });
+}
+
+- (void) getLocalityJSON:(void (^)(NSArray *)) callback{
+
+    locality = [[NSMutableArray alloc] init];
+    myQueue = dispatch_queue_create("myQueue2", NULL);
+    dispatch_async(myQueue, ^{
+        NSURL *myUrl = [NSURL URLWithString:@"http://ergast.com/api/f1/current.json"];
+        //Assign the data from the URL
+        myData3 = [NSData dataWithContentsOfURL:myUrl];
+        
+        mydict3 = [NSJSONSerialization JSONObjectWithData:myData3 options:0 error:nil];
+        NSDictionary *races = [[[mydict3 objectForKey:@"MRData"] objectForKey:@"RaceTable"] objectForKey:@"Races"];
+        for(NSDictionary *tempValue in races)
+        {
+    
+            [locality addObject:tempValue[@"Circuit"] [@"Location"][@"locality"]];
+            
+        }
+        callback(locality);
+        
+    });
+}
+
+- (void) getLocalityPhotoJSON:(void (^)(NSArray *)) callback{
+    
+    localityPhoto = [[NSMutableArray alloc] init];
+
 }
 
 @end

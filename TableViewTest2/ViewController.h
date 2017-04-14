@@ -15,8 +15,10 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
-@property (strong,nonatomic) NSMutableArray *myArray;
+@property (strong,nonatomic) NSMutableArray *raceNameArray;
 @property (strong,nonatomic) NSMutableArray *coordinateArray;
+@property (strong,nonatomic) NSMutableArray *localityArray;
+
 
 extern NSNumber *sourceRowIndex;
 

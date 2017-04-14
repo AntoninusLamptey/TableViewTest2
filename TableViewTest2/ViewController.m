@@ -43,26 +43,31 @@ static BOOL loaded = NO;
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     
-    self.myArray = [[NSMutableArray alloc]init];
+    self.raceNameArray = [[NSMutableArray alloc]init];
     self.coordinateArray = [[NSMutableArray alloc]init];
+    self.localityArray = [[NSMutableArray alloc] init];
     
     NetworkCalls *getJSON = [[NetworkCalls alloc] init];
     
     [getJSON getRacesJSON:^(NSArray *races){
-        [self.myArray addObjectsFromArray:races];
+        [self.raceNameArray addObjectsFromArray:races];
         [self.tableView reloadData];
     }];
     
-    [getJSON getcoordinatesJSON:^(NSArray *coordinates){
+    [getJSON getCoordinatesJSON:^(NSArray *coordinates){
         [[self myStaticArray] addObjectsFromArray:coordinates];
     }];
-
+    
+    [getJSON getLocalityJSON:^(NSArray *locality){
+        [[self localityArray] addObjectsFromArray:locality];
+    }];
 }
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
      CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"myCollectionCell" forIndexPath:indexPath];
-    cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.myArray objectAtIndex:indexPath.row]];
+    cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.raceNameArray objectAtIndex:indexPath.row]];
 //    
 //    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, cell.bounds.size.width, 40)];
 //    title.text = @"placeholder";
@@ -73,18 +78,19 @@ static BOOL loaded = NO;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.myArray.count;
+    return self.raceNameArray.count;
 
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-      return self.myArray.count;
+      return self.raceNameArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell"];
-    cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.myArray objectAtIndex:indexPath.row]];
+    cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.raceNameArray objectAtIndex:indexPath.row]];
+    cell.localityLabel.text = [NSString stringWithFormat:@"%@",[self.localityArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
