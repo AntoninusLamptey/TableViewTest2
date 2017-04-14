@@ -18,7 +18,8 @@
 @property (strong,nonatomic) NSMutableArray *raceNameArray;
 @property (strong,nonatomic) NSMutableArray *coordinateArray;
 @property (strong,nonatomic) NSMutableArray *localityArray;
-
+@property (strong,nonatomic) NSString *yearString;
+@property (weak, nonatomic) IBOutlet UILabel *currentYear;
 
 extern NSNumber *sourceRowIndex;
 

@@ -18,6 +18,7 @@
 		DB9CD93C1E9FFAB200CB00BA /* MapAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD93B1E9FFAB100CB00BA /* MapAnnotations.m */; };
 		DB9CD93F1E9FFDEC00CB00BA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD93E1E9FFDEB00CB00BA /* MapViewController.m */; };
 		DB9CD9421EA1056100CB00BA /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */; };
+		DB9CD9451EA11C5000CB00BA /* IntroScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD9441EA11C5000CB00BA /* IntroScreenController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		DB9CD93E1E9FFDEB00CB00BA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		DB9CD9401EA1056100CB00BA /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		DB9CD9431EA11C5000CB00BA /* IntroScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroScreenController.h; sourceTree = "<group>"; };
+		DB9CD9441EA11C5000CB00BA /* IntroScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScreenController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +76,13 @@
 		DB317EAD1E9FE2A3001656AE /* TableViewTest2 */ = {
 			isa = PBXGroup;
 			children = (
+				DB317EB71E9FE2A3001656AE /* Main.storyboard */,
 				DB317EB11E9FE2A3001656AE /* AppDelegate.h */,
 				DB317EB21E9FE2A3001656AE /* AppDelegate.m */,
 				DB317EB41E9FE2A3001656AE /* ViewController.h */,
 				DB317EB51E9FE2A3001656AE /* ViewController.m */,
+				DB9CD9431EA11C5000CB00BA /* IntroScreenController.h */,
+				DB9CD9441EA11C5000CB00BA /* IntroScreenController.m */,
 				DB9CD93A1E9FFAB100CB00BA /* MapAnnotations.h */,
 				DB9CD93B1E9FFAB100CB00BA /* MapAnnotations.m */,
 				DB9CD93D1E9FFDEB00CB00BA /* MapViewController.h */,
@@ -87,7 +93,6 @@
 				DB317EC61E9FF23C001656AE /* TableViewCell.m */,
 				DB9CD9401EA1056100CB00BA /* CollectionViewCell.h */,
 				DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */,
-				DB317EB71E9FE2A3001656AE /* Main.storyboard */,
 				DB317EBA1E9FE2A3001656AE /* Assets.xcassets */,
 				DB317EBC1E9FE2A3001656AE /* LaunchScreen.storyboard */,
 				DB317EBF1E9FE2A3001656AE /* Info.plist */,
@@ -177,6 +182,7 @@
 			files = (
 				DB317EB61E9FE2A3001656AE /* ViewController.m in Sources */,
 				DB317EC71E9FF23C001656AE /* TableViewCell.m in Sources */,
+				DB9CD9451EA11C5000CB00BA /* IntroScreenController.m in Sources */,
 				DB9CD9391E9FF95A00CB00BA /* NetworkCalls.m in Sources */,
 				DB317EB31E9FE2A3001656AE /* AppDelegate.m in Sources */,
 				DB317EB01E9FE2A3001656AE /* main.m in Sources */,

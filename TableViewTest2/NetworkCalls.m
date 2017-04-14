@@ -9,6 +9,10 @@
 #import "NetworkCalls.h"
 #import <dispatch/dispatch.h>
 
+//google photosearh api,pparse this for photo reference still need actual picture api
+//https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-37.8497,144.968&radius=2000&key=AIzaSyBuiKo_XT26CUfWQCSU5qIyQCc4EixjzYM
+//race results for given year
+//http://ergast.com/api/f1/2012.json
 
 @implementation NetworkCalls{
     //NSMutableArray *raceNames;
@@ -20,16 +24,18 @@
     NSData *myData1;
     NSData *myData2;
     NSData *myData3;
+    //NSString *url;
     //NSData *myData;
     //NSURL *myUrl;
 }
 
-- (void) getRacesJSON:(void (^)(NSArray *)) callback{
+- (void) getRaces: (NSString *)year JSON:(void (^)(NSArray *)) callback{
     
     raceNames = [[NSMutableArray alloc] init];
     myQueue = dispatch_queue_create("myQueue", NULL);
     dispatch_async(myQueue, ^{
-        NSURL *myUrl = [NSURL URLWithString:@"http://ergast.com/api/f1/current.json"];
+        NSURL *myUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://ergast.com/api/f1/%@.json",year]];
+        
         //Assign the data from the URL
         myData1 = [NSData dataWithContentsOfURL:myUrl];
         
@@ -47,12 +53,12 @@
     
 }
 
-- (void) getCoordinatesJSON:(void (^)(NSArray *)) callback{
+- (void) getCoordinates: (NSString *)year JSON:(void (^)(NSArray *)) callback{
     
     coordinatesJSON = [[NSMutableArray alloc] init];
     myQueue = dispatch_queue_create("myQueue2", NULL);
     dispatch_async(myQueue, ^{
-        NSURL *myUrl = [NSURL URLWithString:@"http://ergast.com/api/f1/current.json"];
+        NSURL *myUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://ergast.com/api/f1/%@.json",year]];
         //Assign the data from the URL
         myData2 = [NSData dataWithContentsOfURL:myUrl];
         
@@ -71,13 +77,12 @@
     });
 }
 
-- (void) getLocalityJSON:(void (^)(NSArray *)) callback{
+- (void) getLocality:(NSString *)year JSON:(void (^)(NSArray *)) callback{
 
     locality = [[NSMutableArray alloc] init];
     myQueue = dispatch_queue_create("myQueue2", NULL);
     dispatch_async(myQueue, ^{
-        NSURL *myUrl = [NSURL URLWithString:@"http://ergast.com/api/f1/current.json"];
-        //Assign the data from the URL
+        NSURL *myUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://ergast.com/api/f1/%@.json",year]];        //Assign the data from the URL
         myData3 = [NSData dataWithContentsOfURL:myUrl];
         
         mydict3 = [NSJSONSerialization JSONObjectWithData:myData3 options:0 error:nil];

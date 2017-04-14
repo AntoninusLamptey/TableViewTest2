@@ -18,8 +18,8 @@
 }
 
 
-- (void) getRacesJSON:(void (^)(NSArray *)) callback;
-- (void) getCoordinatesJSON:(void (^)(NSArray *)) callback;
-- (void) getLocalityJSON:(void (^)(NSArray *)) callback;
+- (void) getRaces: (NSString *)year JSON:(void (^)(NSArray *)) callback;
+- (void) getCoordinates:(NSString *)year JSON:(void (^)(NSArray *)) callback;
+- (void) getLocality: (NSString *)year JSON:(void (^)(NSArray *)) callback;
 - (void) getLocalityPhotoJSON:(void (^)(NSArray *)) callback;
 @end

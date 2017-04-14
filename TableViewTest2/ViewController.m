@@ -36,7 +36,7 @@ static BOOL loaded = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-
+    NSLog(@"%@",self.yearString);
 }
 
 - (void)viewDidLoad {
@@ -49,18 +49,20 @@ static BOOL loaded = NO;
     
     NetworkCalls *getJSON = [[NetworkCalls alloc] init];
     
-    [getJSON getRacesJSON:^(NSArray *races){
+    [getJSON getRaces:self.yearString JSON:^(NSArray *races){
         [self.raceNameArray addObjectsFromArray:races];
         [self.tableView reloadData];
     }];
     
-    [getJSON getCoordinatesJSON:^(NSArray *coordinates){
+    [getJSON getCoordinates:self.yearString JSON:^(NSArray *coordinates){
         [[self myStaticArray] addObjectsFromArray:coordinates];
     }];
     
-    [getJSON getLocalityJSON:^(NSArray *locality){
+    [getJSON getLocality:self.yearString JSON:^(NSArray *locality){
         [[self localityArray] addObjectsFromArray:locality];
     }];
+    
+    self.currentYear.text = self.yearString;
 }
 
 

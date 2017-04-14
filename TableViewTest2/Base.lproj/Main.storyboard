@@ -9,6 +9,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Enter Desired Year-->
+        <scene sceneID="eOH-h9-a3N">
+            <objects>
+                <viewController id="um7-Fa-RPo" customClass="IntroScreenController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yGW-fa-KYU"/>
+                        <viewControllerLayoutGuide type="bottom" id="mhF-Ic-ZWK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b5z-8L-ugf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-cJ-Pl9">
+                                <rect key="frame" x="81" y="185" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnQ-EO-23u">
+                                <rect key="frame" x="116" y="276" width="93" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="searchYear:" destination="um7-Fa-RPo" eventType="touchUpInside" id="Ypy-Eu-732"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" identifier="yearSegue" id="Kgc-Yy-7qi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter Desired Year" id="uo7-o7-y4a"/>
+                    <connections>
+                        <outlet property="showRaces" destination="VnQ-EO-23u" id="W96-5A-kcc"/>
+                        <outlet property="yearLabel" destination="Amx-cJ-Pl9" id="WHs-s6-0ZF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Q0-hE-B4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="91" y="-204"/>
+        </scene>
         <!--Stuff-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -79,7 +120,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="129"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aLC-j2-24X" id="7ms-rv-7Bx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="128.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="129"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TBLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laF-Zk-lZV">
@@ -122,13 +163,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter year(yyyy)" textAlignment="natural" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fce-HE-XC9">
-                                        <rect key="frame" x="34" y="116" width="157" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -145,6 +179,7 @@
                     <connections>
                         <outlet property="Switch" destination="nvO-eN-k08" id="NEM-hP-L2F"/>
                         <outlet property="collectionView" destination="4c7-JO-q66" id="DHr-aV-Exc"/>
+                        <outlet property="currentYear" destination="eFA-UK-FV1" id="Uae-4J-2Q5"/>
                         <outlet property="switch" destination="nvO-eN-k08" id="guv-Ct-IlX"/>
                         <outlet property="tableView" destination="00I-0O-Yoj" id="LoD-4r-YPT"/>
                     </connections>
@@ -192,12 +227,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7hY-LQ-9fa"/>
+                        <segue destination="um7-Fa-RPo" kind="relationship" relationship="rootViewController" id="wNk-Hd-VH5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYo-Fe-gbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.5" y="154.5"/>
+            <point key="canvasLocation" x="-431" y="-11"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
