@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TableViewCell.h"
 #import "NetworkCalls.h"
+#import "CollectionViewCell.h"
 
 @interface ViewController ()
 
@@ -60,7 +61,8 @@ static BOOL loaded = NO;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"myCollectionCell" forIndexPath:indexPath];
+     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"myCollectionCell" forIndexPath:indexPath];
+    cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.myArray objectAtIndex:indexPath.row]];
 //    
 //    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, cell.bounds.size.width, 40)];
 //    title.text = @"placeholder";
@@ -82,7 +84,7 @@ static BOOL loaded = NO;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell"];
-    cell.raceLabel.text = @"placeholder";
+    cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.myArray objectAtIndex:indexPath.row]];
     return cell;
 }
 

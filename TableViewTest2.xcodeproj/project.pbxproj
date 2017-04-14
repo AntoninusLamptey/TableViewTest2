@@ -17,6 +17,7 @@
 		DB9CD9391E9FF95A00CB00BA /* NetworkCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD9381E9FF95A00CB00BA /* NetworkCalls.m */; };
 		DB9CD93C1E9FFAB200CB00BA /* MapAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD93B1E9FFAB100CB00BA /* MapAnnotations.m */; };
 		DB9CD93F1E9FFDEC00CB00BA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD93E1E9FFDEB00CB00BA /* MapViewController.m */; };
+		DB9CD9421EA1056100CB00BA /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		DB9CD93B1E9FFAB100CB00BA /* MapAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotations.m; sourceTree = "<group>"; };
 		DB9CD93D1E9FFDEB00CB00BA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		DB9CD93E1E9FFDEB00CB00BA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		DB9CD9401EA1056100CB00BA /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				DB9CD9381E9FF95A00CB00BA /* NetworkCalls.m */,
 				DB317EC51E9FF23C001656AE /* TableViewCell.h */,
 				DB317EC61E9FF23C001656AE /* TableViewCell.m */,
+				DB9CD9401EA1056100CB00BA /* CollectionViewCell.h */,
+				DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */,
 				DB317EB71E9FE2A3001656AE /* Main.storyboard */,
 				DB317EBA1E9FE2A3001656AE /* Assets.xcassets */,
 				DB317EBC1E9FE2A3001656AE /* LaunchScreen.storyboard */,
@@ -176,6 +181,7 @@
 				DB317EB31E9FE2A3001656AE /* AppDelegate.m in Sources */,
 				DB317EB01E9FE2A3001656AE /* main.m in Sources */,
 				DB9CD93C1E9FFAB200CB00BA /* MapAnnotations.m in Sources */,
+				DB9CD9421EA1056100CB00BA /* CollectionViewCell.m in Sources */,
 				DB9CD93F1E9FFDEC00CB00BA /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
