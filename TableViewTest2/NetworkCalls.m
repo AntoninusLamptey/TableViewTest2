@@ -36,7 +36,7 @@
         for(NSDictionary *tempValue in races)
         {
             [raceNames addObject:tempValue[@"raceName"]];
-            NSLog(@"%@",tempValue[@"raceName"]);
+            
             
         }
         callback(raceNames);

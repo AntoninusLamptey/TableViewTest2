@@ -34,6 +34,9 @@ static BOOL loaded = NO;
     return theArray;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +48,6 @@ static BOOL loaded = NO;
     NetworkCalls *getJSON = [[NetworkCalls alloc] init];
     
     [getJSON getRacesJSON:^(NSArray *races){
-        NSLog(@"%@",races);
         [self.myArray addObjectsFromArray:races];
         [self.tableView reloadData];
     }];
@@ -59,11 +61,11 @@ static BOOL loaded = NO;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"myCollectionCell" forIndexPath:indexPath];
-    
-    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, cell.bounds.size.width, 40)];
-    title.text = @"placeholder";
-    title.textColor = [UIColor blackColor];
-    title.tag = indexPath.row;
+//    
+//    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, cell.bounds.size.width, 40)];
+//    title.text = @"placeholder";
+//    title.textColor = [UIColor blackColor];
+//    title.tag = indexPath.row;
     cell.backgroundColor = [UIColor greenColor];
     return cell;
 }
@@ -81,8 +83,19 @@ static BOOL loaded = NO;
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell"];
     cell.raceLabel.text = @"placeholder";
-    NSLog(@"%@",[self.myArray objectAtIndex:1]);
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"mySegue"]) {
+        
+        NSIndexPath *indexpath=[self.tableView indexPathForSelectedRow];
+        sourceRowIndex = [NSNumber numberWithDouble:indexpath.row];
+        
+        
+    }
+    
+    
 }
 
 - (IBAction)switchView:(id)sender {
@@ -91,7 +104,8 @@ static BOOL loaded = NO;
 
     if (self.tableView.superview == self.view)
     {
-        [self.view addSubview:self.tableView];
+        //[self.view addSubview:self.tableView];
+        [self.collectionView reloadData];
         sourceView = self.tableView;
         destinationView = self.collectionView;
     }
