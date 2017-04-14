@@ -54,6 +54,7 @@
                                                 </view>
                                                 <connections>
                                                     <outlet property="raceLabel" destination="QiY-Zj-NXC" id="kNk-dY-e7v"/>
+                                                    <segue destination="Pif-sK-UJm" kind="push" identifier="myCollectionSegue" id="ZEn-6m-clk"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -177,4 +178,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZEn-6m-clk"/>
+    </inferredMetricsTieBreakers>
 </document>

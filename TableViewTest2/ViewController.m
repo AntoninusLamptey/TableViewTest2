@@ -96,9 +96,18 @@ static BOOL loaded = NO;
         
         
     }
+    if ([segue.identifier isEqualToString:@"myCollectionSegue"]) {
+        
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+        sourceRowIndex = [NSNumber numberWithDouble:indexPath.item];
+        
+        
+    }
     
     
 }
+
+
 
 - (IBAction)switchView:(id)sender {
     
