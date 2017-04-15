@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyViewController.h
 //  FinalCoreData
 //
 //  Created by Madhu Mahat on 4/13/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MyViewController : UIViewController
 
 @end
-

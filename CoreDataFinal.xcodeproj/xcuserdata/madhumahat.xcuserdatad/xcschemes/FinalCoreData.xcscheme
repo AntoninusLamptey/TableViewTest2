@@ -17,7 +17,7 @@
                BlueprintIdentifier = "806E56761E9FDF140074A85F"
                BuildableName = "FinalCoreData.app"
                BlueprintName = "FinalCoreData"
-               ReferencedContainer = "container:FinalCoreData.xcodeproj">
+               ReferencedContainer = "container:Data.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "806E56761E9FDF140074A85F"
             BuildableName = "FinalCoreData.app"
             BlueprintName = "FinalCoreData"
-            ReferencedContainer = "container:FinalCoreData.xcodeproj">
+            ReferencedContainer = "container:Data.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "806E56761E9FDF140074A85F"
             BuildableName = "FinalCoreData.app"
             BlueprintName = "FinalCoreData"
-            ReferencedContainer = "container:FinalCoreData.xcodeproj">
+            ReferencedContainer = "container:Data.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "806E56761E9FDF140074A85F"
             BuildableName = "FinalCoreData.app"
             BlueprintName = "FinalCoreData"
-            ReferencedContainer = "container:FinalCoreData.xcodeproj">
+            ReferencedContainer = "container:Data.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
