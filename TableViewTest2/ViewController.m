@@ -36,17 +36,19 @@ static BOOL loaded = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    NSLog(@"%@",self.yearString);
+  
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     
+    self.title = [NSString stringWithFormat:@"Current Year: %@",self.yearString];
     self.raceNameArray = [[NSMutableArray alloc]init];
     self.coordinateArray = [[NSMutableArray alloc]init];
     self.localityArray = [[NSMutableArray alloc] init];
-    
+    self.localityPhotosArray = [[NSMutableArray alloc] init];
+    self.tableView.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height-60);
     NetworkCalls *getJSON = [[NetworkCalls alloc] init];
     
     [getJSON getRaces:self.yearString JSON:^(NSArray *races){
@@ -56,11 +58,29 @@ static BOOL loaded = NO;
     
     [getJSON getCoordinates:self.yearString JSON:^(NSArray *coordinates){
         [[self myStaticArray] addObjectsFromArray:coordinates];
+        [getJSON getLocality:[self myStaticArray] PhotoJSON:^(NSArray *photos) {
+            //[self.localityPhotosArray addObjectsFromArray:photos];
+            NSLog(@"%lu",(unsigned long)photos.count);
+            if (photos.count == self.myStaticArray.count) {
+                [self.localityPhotosArray addObjectsFromArray:photos];
+                [self.tableView reloadData];
+            }
+            
+            NSLog(@"hello: %lu",(unsigned long)self.localityPhotosArray.count);
+        }];
+        
     }];
     
     [getJSON getLocality:self.yearString JSON:^(NSArray *locality){
         [[self localityArray] addObjectsFromArray:locality];
     }];
+    
+    
+//    [getJSON getLocality:self.yearString JSON:^(NSArray *locality){
+//        [[self localityArray] addObjectsFromArray:locality];
+//    }];
+    
+    
     
     self.currentYear.text = self.yearString;
 }
@@ -75,7 +95,7 @@ static BOOL loaded = NO;
 //    title.text = @"placeholder";
 //    title.textColor = [UIColor blackColor];
 //    title.tag = indexPath.row;
-    cell.backgroundColor = [UIColor greenColor];
+    cell.collectionImage.image = [UIImage imageWithData:[self.localityPhotosArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -93,6 +113,10 @@ static BOOL loaded = NO;
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell"];
     cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.raceNameArray objectAtIndex:indexPath.row]];
     cell.localityLabel.text = [NSString stringWithFormat:@"%@",[self.localityArray objectAtIndex:indexPath.row]];
+   // if (self.localityPhotosArray.count >=20) {
+        cell.imageLocation.image = [UIImage imageWithData:[self.localityPhotosArray objectAtIndex:indexPath.row]];
+    
+    
     return cell;
 }
 
@@ -127,15 +151,17 @@ static BOOL loaded = NO;
         [self.collectionView reloadData];
         sourceView = self.tableView;
         destinationView = self.collectionView;
+        destinationView.frame = self.view.bounds;
     }
     else
     {
         [self.view addSubview:self.collectionView];
         sourceView = self.collectionView;
         destinationView = self.tableView;
+        destinationView.frame = self.view.bounds;
     }
     [sourceView removeFromSuperview];
-    
+    destinationView.frame = self.view.bounds;
     [self.view addSubview:self.collectionView];
     [self.view addSubview:destinationView];
     

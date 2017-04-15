@@ -10,5 +10,6 @@
 
 @interface CollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *raceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *collectionImage;
 
 @end

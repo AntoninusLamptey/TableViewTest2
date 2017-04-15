@@ -14,12 +14,12 @@
     NSMutableArray *coordinatesJSON;
     NSMutableArray *locality;
     NSMutableArray *localityPhoto;
-    
+    NSMutableArray *photoReferences;
 }
 
 
 - (void) getRaces: (NSString *)year JSON:(void (^)(NSArray *)) callback;
 - (void) getCoordinates:(NSString *)year JSON:(void (^)(NSArray *)) callback;
 - (void) getLocality: (NSString *)year JSON:(void (^)(NSArray *)) callback;
-- (void) getLocalityPhotoJSON:(void (^)(NSArray *)) callback;
+- (void) getLocality: (NSArray *)coordinates888 PhotoJSON:(void (^)(NSArray *)) callback;
 @end
