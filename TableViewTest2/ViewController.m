@@ -10,6 +10,7 @@
 #import "TableViewCell.h"
 #import "NetworkCalls.h"
 #import "CollectionViewCell.h"
+#import "ResultsTableViewController.h"
 
 @interface ViewController ()
 
@@ -82,7 +83,7 @@ static BOOL loaded = NO;
     
     
     
-    self.currentYear.text = self.yearString;
+    //self.currentYear.text = self.yearString;
 }
 
 
@@ -114,7 +115,7 @@ static BOOL loaded = NO;
     cell.raceLabel.text = [NSString stringWithFormat:@"%@",[self.raceNameArray objectAtIndex:indexPath.row]];
     cell.localityLabel.text = [NSString stringWithFormat:@"%@",[self.localityArray objectAtIndex:indexPath.row]];
    // if (self.localityPhotosArray.count >=20) {
-        cell.imageLocation.image = [UIImage imageWithData:[self.localityPhotosArray objectAtIndex:indexPath.row]];
+         cell.imageLocation.image = [UIImage imageWithData:[self.localityPhotosArray objectAtIndex:indexPath.row]];
     
     
     return cell;
@@ -135,7 +136,15 @@ static BOOL loaded = NO;
         
         
     }
+    if ([segue.identifier isEqualToString:@"resultsSegue"]) {
+        // ResultsTableViewController *resultsViewController = [segue destinationViewController];
+    }
     
+    
+}
+
+- (IBAction)viewResults:(id)sender{
+    //performSegueWithIdentifier(@"resultsSegue", sender: self);
     
 }
 
@@ -161,11 +170,16 @@ static BOOL loaded = NO;
         destinationView.frame = self.view.bounds;
     }
     [sourceView removeFromSuperview];
-    destinationView.frame = self.view.bounds;
+    if(destinationView == self.tableView)
+    {
+        destinationView.frame = self.view.bounds;
+    }
     [self.view addSubview:self.collectionView];
     [self.view addSubview:destinationView];
     
 
 }
+
+
 
 @end

@@ -13,7 +13,7 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *Switch;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UILabel *currentYear;
+
 
 
 
@@ -28,6 +28,7 @@ extern NSNumber *sourceRowIndex;
 
 -(NSMutableArray*) myStaticArray;
 - (IBAction)switchView:(id)sender;
+
 
 
 

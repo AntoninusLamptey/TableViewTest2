@@ -19,6 +19,7 @@
 		DB9CD93F1E9FFDEC00CB00BA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD93E1E9FFDEB00CB00BA /* MapViewController.m */; };
 		DB9CD9421EA1056100CB00BA /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */; };
 		DB9CD9451EA11C5000CB00BA /* IntroScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD9441EA11C5000CB00BA /* IntroScreenController.m */; };
+		DB9CD9481EA2F73200CB00BA /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CD9471EA2F73200CB00BA /* ResultsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		DB9CD9431EA11C5000CB00BA /* IntroScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroScreenController.h; sourceTree = "<group>"; };
 		DB9CD9441EA11C5000CB00BA /* IntroScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScreenController.m; sourceTree = "<group>"; };
+		DB9CD9461EA2F73200CB00BA /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
+		DB9CD9471EA2F73200CB00BA /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				DB9CD9381E9FF95A00CB00BA /* NetworkCalls.m */,
 				DB317EC51E9FF23C001656AE /* TableViewCell.h */,
 				DB317EC61E9FF23C001656AE /* TableViewCell.m */,
+				DB9CD9461EA2F73200CB00BA /* ResultsTableViewController.h */,
+				DB9CD9471EA2F73200CB00BA /* ResultsTableViewController.m */,
 				DB9CD9401EA1056100CB00BA /* CollectionViewCell.h */,
 				DB9CD9411EA1056100CB00BA /* CollectionViewCell.m */,
 				DB317EBA1E9FE2A3001656AE /* Assets.xcassets */,
@@ -184,6 +189,7 @@
 				DB317EC71E9FF23C001656AE /* TableViewCell.m in Sources */,
 				DB9CD9451EA11C5000CB00BA /* IntroScreenController.m in Sources */,
 				DB9CD9391E9FF95A00CB00BA /* NetworkCalls.m in Sources */,
+				DB9CD9481EA2F73200CB00BA /* ResultsTableViewController.m in Sources */,
 				DB317EB31E9FE2A3001656AE /* AppDelegate.m in Sources */,
 				DB317EB01E9FE2A3001656AE /* main.m in Sources */,
 				DB9CD93C1E9FFAB200CB00BA /* MapAnnotations.m in Sources */,

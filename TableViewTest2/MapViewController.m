@@ -25,7 +25,7 @@
     
     ViewController *test = [[ViewController alloc] init];
     self.manager.delegate = self;
-    
+    self.title = @"Race Location";
     if([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
         [self.manager requestWhenInUseAuthorization]; //if this responds that means it is using ios 8 or more
         

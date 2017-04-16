@@ -117,7 +117,6 @@
             myData4 = [NSData dataWithContentsOfURL:myUrl];
             
             mydict4 = [NSJSONSerialization JSONObjectWithData:myData4 options:0 error:nil];
-            NSLog(@"%@",mydict4);
             NSDictionary *photoRefString = [mydict4 objectForKey:@"results"];
             for(NSDictionary *temp in photoRefString)
             {
@@ -136,23 +135,6 @@
             
         });
     }
-    /*
-    dispatch_async(myQueue, ^{
-        NSURL *myUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%@,%@&radius=2000&key=AIzaSyBuiKo_XT26CUfWQCSU5qIyQCc4EixjzYM",[coordinates]]];
-        myData3 = [NSData dataWithContentsOfURL:myUrl];
-        
-        mydict3 = [NSJSONSerialization JSONObjectWithData:myData3 options:0 error:nil];
-        NSDictionary *races = [[[mydict3 objectForKey:@"MRData"] objectForKey:@"RaceTable"] objectForKey:@"Races"];
-        for(NSDictionary *tempValue in races)
-        {
-            
-            [locality addObject:tempValue[@"Circuit"] [@"Location"][@"locality"]];
-            
-        }
-        callback(locality);
-        
-    });
-     */
 }
 
 @end
