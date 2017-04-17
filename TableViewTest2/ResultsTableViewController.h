@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ResultsTableViewController : UITableViewController
-
+@property (strong,nonatomic) NSMutableArray *resultsArray;
 
 @end

@@ -15,6 +15,7 @@
     NSMutableArray *locality;
     NSMutableArray *localityPhoto;
     NSMutableArray *photoReferences;
+    NSMutableArray *resultsArray;
 }
 
 
@@ -22,4 +23,5 @@
 - (void) getCoordinates:(NSString *)year JSON:(void (^)(NSArray *)) callback;
 - (void) getLocality: (NSString *)year JSON:(void (^)(NSArray *)) callback;
 - (void) getLocality: (NSArray *)coordinates888 PhotoJSON:(void (^)(NSArray *)) callback;
+- (void) get:(NSString *)raceRound Results: (NSString *)year  JSON:(void (^)(NSArray *)) callback;
 @end

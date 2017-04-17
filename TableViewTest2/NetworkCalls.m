@@ -137,4 +137,33 @@
     }
 }
 
+- (void) get:(NSString *)raceRound Results: (NSString *)year  JSON:(void (^)(NSArray *)) callback{
+
+    resultsArray = [[NSMutableArray alloc] init];
+    myQueue = dispatch_queue_create("myQueue2", NULL);
+    dispatch_async(myQueue, ^{
+        NSURL *myUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://ergast.com/api/f1/%@/%@/results.json",year,raceRound]];
+        myData5 = [NSData dataWithContentsOfURL:myUrl];
+        
+        mydict5 = [NSJSONSerialization JSONObjectWithData:myData5 options:0 error:nil];
+        NSDictionary *races = [[[mydict5 objectForKey:@"MRData"] objectForKey:@"RaceTable"] objectForKey:@"Races"];
+        for(NSDictionary *tempValue in races)
+        {
+            
+            NSDictionary *tempResults = [tempValue objectForKey:@"Results"];
+            for(NSDictionary *tempValue2 in tempResults){
+                NSMutableString *fullName = [tempValue2[@"Driver"] objectForKey:@"givenName"];
+                [fullName appendString:[tempValue2[@"Driver"]objectForKey:@"familyName"]];
+                NSLog(@"%@",fullName);
+                [resultsArray addObject:fullName];
+            }
+            //[resultsArray addObject:tempValue[@"Circuit"] [@"Location"][@"locality"]];
+            
+        }
+        callback(resultsArray);
+        
+    });
+    
+}
+
 @end

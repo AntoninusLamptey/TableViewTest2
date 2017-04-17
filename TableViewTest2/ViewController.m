@@ -122,22 +122,29 @@ static BOOL loaded = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // NetworkCalls *getResults = [[NetworkCalls alloc] init];
     if ([segue.identifier isEqualToString:@"mySegue"]) {
         
         NSIndexPath *indexpath=[self.tableView indexPathForSelectedRow];
         sourceRowIndex = [NSNumber numberWithDouble:indexpath.row];
+//        [getResults get:@"1" Results:self.yearString JSON:^(NSArray *results){
+//        
+//        }];
         
         
     }
     if ([segue.identifier isEqualToString:@"myCollectionSegue"]) {
         
-        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+       NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
         sourceRowIndex = [NSNumber numberWithDouble:indexPath.item];
         
         
     }
     if ([segue.identifier isEqualToString:@"resultsSegue"]) {
-        // ResultsTableViewController *resultsViewController = [segue destinationViewController];
+//         ResultsTableViewController *resultsViewController = [segue destinationViewController];
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//        sourceRowIndex = [NSNumber numberWithDouble:indexPath.item];
     }
     
     
