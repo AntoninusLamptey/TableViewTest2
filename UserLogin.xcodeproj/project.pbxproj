@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		804295C51EA43D22003C17F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 804295C41EA43D22003C17F9 /* main.m */; };
 		804295C81EA43D22003C17F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 804295C71EA43D22003C17F9 /* AppDelegate.m */; };
-		804295CB1EA43D22003C17F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804295CA1EA43D22003C17F9 /* ViewController.m */; };
 		804295CE1EA43D22003C17F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804295CC1EA43D22003C17F9 /* Main.storyboard */; };
 		804295D11EA43D22003C17F9 /* UserLogin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 804295CF1EA43D22003C17F9 /* UserLogin.xcdatamodeld */; };
 		804295D31EA43D22003C17F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804295D21EA43D22003C17F9 /* Assets.xcassets */; };
 		804295D61EA43D22003C17F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804295D41EA43D22003C17F9 /* LaunchScreen.storyboard */; };
+		804295DF1EA43E6A003C17F9 /* UserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804295DE1EA43E6A003C17F9 /* UserLoginViewController.m */; };
+		804295E21EA47DAA003C17F9 /* LoggedIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 804295E11EA47DAA003C17F9 /* LoggedIn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +22,15 @@
 		804295C41EA43D22003C17F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		804295C61EA43D22003C17F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		804295C71EA43D22003C17F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		804295C91EA43D22003C17F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		804295CA1EA43D22003C17F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		804295CD1EA43D22003C17F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		804295D01EA43D22003C17F9 /* UserLogin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserLogin.xcdatamodel; sourceTree = "<group>"; };
 		804295D21EA43D22003C17F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		804295D51EA43D22003C17F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		804295D71EA43D22003C17F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		804295DD1EA43E6A003C17F9 /* UserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginViewController.h; sourceTree = "<group>"; };
+		804295DE1EA43E6A003C17F9 /* UserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginViewController.m; sourceTree = "<group>"; };
+		804295E01EA47DAA003C17F9 /* LoggedIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggedIn.h; sourceTree = "<group>"; };
+		804295E11EA47DAA003C17F9 /* LoggedIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggedIn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +65,16 @@
 			children = (
 				804295C61EA43D22003C17F9 /* AppDelegate.h */,
 				804295C71EA43D22003C17F9 /* AppDelegate.m */,
-				804295C91EA43D22003C17F9 /* ViewController.h */,
-				804295CA1EA43D22003C17F9 /* ViewController.m */,
+				804295DD1EA43E6A003C17F9 /* UserLoginViewController.h */,
+				804295DE1EA43E6A003C17F9 /* UserLoginViewController.m */,
 				804295CC1EA43D22003C17F9 /* Main.storyboard */,
 				804295D21EA43D22003C17F9 /* Assets.xcassets */,
 				804295D41EA43D22003C17F9 /* LaunchScreen.storyboard */,
 				804295D71EA43D22003C17F9 /* Info.plist */,
 				804295CF1EA43D22003C17F9 /* UserLogin.xcdatamodeld */,
 				804295C31EA43D22003C17F9 /* Supporting Files */,
+				804295E01EA47DAA003C17F9 /* LoggedIn.h */,
+				804295E11EA47DAA003C17F9 /* LoggedIn.m */,
 			);
 			path = UserLogin;
 			sourceTree = "<group>";
@@ -153,10 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				804295CB1EA43D22003C17F9 /* ViewController.m in Sources */,
 				804295C81EA43D22003C17F9 /* AppDelegate.m in Sources */,
+				804295E21EA47DAA003C17F9 /* LoggedIn.m in Sources */,
 				804295D11EA43D22003C17F9 /* UserLogin.xcdatamodeld in Sources */,
 				804295C51EA43D22003C17F9 /* main.m in Sources */,
+				804295DF1EA43E6A003C17F9 /* UserLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
